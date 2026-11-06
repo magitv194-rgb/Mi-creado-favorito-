@@ -31,10 +31,6 @@ class AudioCaptureEngine(
             onError("Falta el permiso de captura de audio interno.")
             return
         }
-        if (source != Source.INTERNAL &&
-            android.os.Build.VERSION.SDK_INT >= 23 &&
-            android.app.Application::class.java == null) return
-
         val sampleRate = 16000
         val format = AudioFormat.Builder()
             .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
